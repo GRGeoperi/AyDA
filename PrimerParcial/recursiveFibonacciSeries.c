@@ -36,7 +36,7 @@ long RecursiveFibonacci(int n)
 int main(void)
 {
     clock_t begin = clock();    // Inicio del conteo de tiempo
-        RecursiveFibonacci(55); // Llamada a la función recursiva
+    RecursiveFibonacci(55);     // Llamada a la función recursiva
     clock_t end = clock();      // Fin del conteo de tiempo
 
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC; // Tiempo de ejecución en segundos
