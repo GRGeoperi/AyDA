@@ -1,3 +1,9 @@
+/*
+    Implementación del algoritmo recursivo para hallar el enésimo término 
+    de la serie de Fibonacci. Tomando en cuenta que la recursividad, en este caso, 
+    es muy costosa en términos de tiempo de ejecución.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,7 +19,11 @@ long RecursiveFibonacci(long n)
 
 int main(void)
 {
-    // Rango prueba: 0 - 50
-    RecursiveFibonacci(50);
+    // Rango prueba: 0 - 100
+    RecursiveFibonacci(1);
+    /*
+        Tabla de pruebas:
+        n = 1 -> 
+    */
     return 0;
 }
