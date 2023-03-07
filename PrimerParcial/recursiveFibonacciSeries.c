@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-long RecursiveFibonacci(long n)
+long RecursiveFibonacci(int n)
 {
     if (n == 0)
         return 0;
@@ -38,7 +38,7 @@ int main(void)
     clock_t begin = clock();    // Inicio del conteo de tiempo
         RecursiveFibonacci(55); // Llamada a la función recursiva
     clock_t end = clock();      // Fin del conteo de tiempo
-    
+
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC; // Tiempo de ejecución en segundos
     printf("Tiempo de ejecución: %f\n", time_spent);            // Impresión del tiempo de ejecución
     return 0;
