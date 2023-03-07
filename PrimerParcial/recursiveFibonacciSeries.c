@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int RecursiveFibonacci(int n)
+long RecursiveFibonacci(long n)
 {
     if (n == 0)
         return 0;
@@ -13,6 +13,7 @@ int RecursiveFibonacci(int n)
 
 int main(void)
 {
-    printf("%d\n", RecursiveFibonacci(10));
+    // Rango prueba: 0 - 50
+    RecursiveFibonacci(50);
     return 0;
 }
