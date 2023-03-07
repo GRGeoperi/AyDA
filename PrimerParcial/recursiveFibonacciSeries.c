@@ -1,11 +1,14 @@
-/*
-    Implementación del algoritmo recursivo para hallar el enésimo término 
-    de la serie de Fibonacci. Tomando en cuenta que la recursividad, en este caso, 
-    es muy costosa en términos de tiempo de ejecución.
+/*  Objetivo:
+    Implementar el algoritmo recursivo para hallar el enésimo término
+    de la serie de Fibonacci. Al ser un algoritmo costoso en tiempo,
+    únicamente se probó con un rango de 5 a 55. Siendo 60, el valor
+    máximo que se intentó probar, alcanzando 2 horas de ejecución y,
+    finalmente, abortando el proceso.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 long RecursiveFibonacci(long n)
 {
@@ -19,11 +22,27 @@ long RecursiveFibonacci(long n)
 
 int main(void)
 {
-    // Rango prueba: 0 - 100
-    RecursiveFibonacci(1);
-    /*
-        Tabla de pruebas:
-        n = 1 -> 
+    clock_t begin = clock();
+
+    RecursiveFibonacci(55);
+
+    clock_t end = clock();
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+    /*  Tabla de pruebas:
+        n = 5 -> 0.000003 s
+        n = 10 -> 0.000004 s
+        n = 15 -> 0.000009 s
+        n = 20 -> 0.000094 s
+        n = 25 -> 0.000960 s
+        n = 30 -> 0.009884 s
+        n = 35 -> 0.098389 s
+        n = 40 -> 1.114837 s
+        n = 45 -> 11.640281 s
+        n = 50 -> 128.980501 s
+        n = 55 -> 1378.000000 s
     */
+
+    printf("Tiempo de ejecución: %f\n", time_spent);
     return 0;
 }
