@@ -5,6 +5,19 @@
     máximo que se intentó probar, alcanzando 2 horas de ejecución y,
     finalmente, abortando el proceso.
 */
+/*  Tabla de pruebas:
+    n = 5 -> 0.000003 s
+    n = 10 -> 0.000004 s
+    n = 15 -> 0.000009 s
+    n = 20 -> 0.000094 s
+    n = 25 -> 0.000960 s
+    n = 30 -> 0.009884 s
+    n = 35 -> 0.098389 s
+    n = 40 -> 1.114837 s
+    n = 45 -> 11.640281 s
+    n = 50 -> 128.980501 s
+    n = 55 -> -
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,27 +35,11 @@ long RecursiveFibonacci(long n)
 
 int main(void)
 {
-    clock_t begin = clock();
-
-    RecursiveFibonacci(55);
-
-    clock_t end = clock();
-    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-
-    /*  Tabla de pruebas:
-        n = 5 -> 0.000003 s
-        n = 10 -> 0.000004 s
-        n = 15 -> 0.000009 s
-        n = 20 -> 0.000094 s
-        n = 25 -> 0.000960 s
-        n = 30 -> 0.009884 s
-        n = 35 -> 0.098389 s
-        n = 40 -> 1.114837 s
-        n = 45 -> 11.640281 s
-        n = 50 -> 128.980501 s
-        n = 55 -> 1378.000000 s
-    */
-
-    printf("Tiempo de ejecución: %f\n", time_spent);
+    clock_t begin = clock();    // Inicio del conteo de tiempo
+        RecursiveFibonacci(55); // Llamada a la función recursiva
+    clock_t end = clock();      // Fin del conteo de tiempo
+    
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC; // Tiempo de ejecución en segundos
+    printf("Tiempo de ejecución: %f\n", time_spent);            // Impresión del tiempo de ejecución
     return 0;
 }
