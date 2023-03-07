@@ -5,6 +5,7 @@
     máximo que se intentó probar, alcanzando 2 horas de ejecución y,
     finalmente, abortando el proceso.
 */
+
 /*  Tabla de pruebas:
     n = 5 -> 0.000003 s
     n = 10 -> 0.000004 s
