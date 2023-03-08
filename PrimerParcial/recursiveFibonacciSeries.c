@@ -5,62 +5,13 @@
     a un archivo de texto.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "recursiveFibonacciSeries.h"
 
-unsigned long RecursiveFibonacci(int n)
-{
-    if (n == 0)
-        return 0;
-    else if (n == 1)
-        return 1;
-    else
-        return RecursiveFibonacci(n - 1) + RecursiveFibonacci(n - 2);
-}
-
-double TestingTimeFunction(int n)
-{
-    double timeSpent = 0;      // Tiempo de ejecución en segundos
-    clock_t begin = clock();    // Inicio del conteo de tiempo
-    RecursiveFibonacci(n);     // Llamada a la función recursiva
-    clock_t end = clock();      // Fin del conteo de tiempo
-    timeSpent = (double)(end - begin) / CLOCKS_PER_SEC;
-    return timeSpent;          // Regresa el tiempo de ejecución
-}
-
-void ExportData(int n, double ArrayTime[])
-{
-    FILE* archivo;
-    archivo = fopen("TiempoRequerido.txt", "w");
-
-    if (archivo == NULL) 
-    {
-        printf("No se pudo crear el archivo");
-        return;
-    }
-    fprintf(archivo, "Entrada (n) | Tiempo Requerido (s)\n");
-    fprintf(archivo, "------------------------------------\n");
-    for (int i = 0; i <= n; i++) 
-    {
-        fprintf(archivo, "\t%d \t\t| \t\t%f\n", i, ArrayTime[i]);
-    }
-    fclose(archivo);
-}
-
-void TestAndExport()
-{
-    int n = 25; // Rango de prueba
-    double arrayTime[n];
-    for (int i = 0; i <= n; i++)
-    {
-        arrayTime[i] = TestingTimeFunction(i);
-    }
-    ExportData(n , arrayTime);
-}
+// ¡Peligro! Sobrepasar 56 puede causar más de una hora de ejecución.
+#define N 56
 
 int main(void)
 {
-    TestAndExport();
+    TestAndExport(N);
     return 0;
 }
