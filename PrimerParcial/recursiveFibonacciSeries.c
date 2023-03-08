@@ -1,8 +1,8 @@
 /*  Objetivo:
     Implementar el algoritmo recursivo para hallar el enésimo término
     de la serie de Fibonacci. Al ser un algoritmo costoso en tiempo,
-    únicamente se probó con un rango de 0 a 56. El resultado se exportó
-    a un archivo de texto.
+    únicamente se probó con un rango de 0 a 56. Los resultados se 
+    exportan a un archivo de texto.
 */
 
 #include "recursiveFibonacciSeries.h"
