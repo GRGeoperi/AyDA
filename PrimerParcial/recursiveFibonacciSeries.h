@@ -46,6 +46,7 @@ void TestAndExport(int n)
     for (int i = 0; i <= n; i++)
     {
         arrayTime[i] = TestingTimeFunction(i);  // Llena el arreglo con lo que se obtuvo de la función
+        printf("n = %d Completado\n", i);
     }
     ExportData(n , arrayTime);
 }
