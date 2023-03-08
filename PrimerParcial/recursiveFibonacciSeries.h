@@ -26,32 +26,26 @@ void ExportData(int n, double ArrayTime[])
 {
     FILE* archivo;
     archivo = fopen("TiempoRequerido.txt", "w");    // Crea y abre en modo escritura un archivo de texto
-
-    if (archivo == NULL)    // Verifica si el archivo se creó
+    if (archivo == NULL)
     {
-        printf("No se pudo crear el archivo\n");    // Si no hay problema, no debería ver esto
+        printf("No se pudo crear el archivo\n");
         return;
     }
-
     fprintf(archivo, "Entrada (n) | Tiempo Requerido (s)\n");
     fprintf(archivo, "------------------------------------\n");
-
     for (int i = 0; i <= n; i++)    // Escribe el tiempo de ejecución por cada entrada
     {
         fprintf(archivo, "\t%d \t\t| \t\t%f\n", i, ArrayTime[i]);
     }
-
     fclose(archivo);    // Cierra el archivo
 }
 
 void TestAndExport(int n)
 {
     double arrayTime[n];    // Arreglo para almacenar los tiempos de ejecución
-
     for (int i = 0; i <= n; i++)
     {
         arrayTime[i] = TestingTimeFunction(i);  // Llena el arreglo con lo que se obtuvo de la función
     }
-
     ExportData(n , arrayTime);
 }
