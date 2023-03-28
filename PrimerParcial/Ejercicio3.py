@@ -13,3 +13,6 @@ def power_l(x, n):
         return power_l(x * x, n / 2)
     else:
         return power_l(x * x, (n - 1) / 2) * x
+
+print(power_r(2, 10))
+print(power_l(2, 100))
