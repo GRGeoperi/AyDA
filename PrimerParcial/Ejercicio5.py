@@ -37,4 +37,3 @@ print('\n')
 test = power_matrix(test1, 3)
 for i in test:
     print('\t'.join(map(str, i)))
-    
