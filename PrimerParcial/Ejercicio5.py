@@ -30,11 +30,20 @@ def power_matrix(matrix, n):
         a = power_matrix(c, (n - 1) / 2)
         return power_matrix(a, matrix)
 
-test1 = create_matrix()
-for i in test1:
-    print('\t'.join(map(str, i)))
-print('\n')
-test = power_matrix(test1, 3)
-for i in test:
-    print('\t'.join(map(str, i)))
+def power_matrix(matrix, n):
+    matrixP = np.zeros((2, 2))
+    if n == 1:
+        return matrix
+    else:
+        matrixP = power_matrix(matrix, floor(n / 2))
+        if n % 2 == 0:
+            return multiply_matrix(matrixP, matrixP)
+        else:
+            return multiply_matrix(matrix, multiply_matrix(matrixP, matrixP))
 
+print("Ingrese los valores de la matriz: ")
+matriz = create_matrix()
+print("Su matriz es:\n", matriz)
+N = int(input("Ingrese el valor de N: "))
+potenciaMatriz = power_matrix(matriz, N)
+print("Su matriz potenciada es:\n", potenciaMatriz)
