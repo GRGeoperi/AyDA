@@ -1,12 +1,12 @@
 import numpy as np
-from random import randint
+from math import floor
 
 def create_matrix():
     matrix = []
     for i in range(2):
         matrix.append([])
         for j in range(2):
-            matrix[i].append(randint(0, 10))
+            matrix[i].append(int(input()))
     return matrix
 
 def multiply_matrix(matrixA, matrixB):
