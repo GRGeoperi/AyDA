@@ -18,28 +18,18 @@ def multiply_matrix(matrixA, matrixB):
                 suma += matrixA[i][k] * matrixB[k][j]
             matrixC[i][j] = suma
     return matrixC
-    
-def power_matrix(matrix, n):
-    if (n == 1):
-        return matrix
-    if (n % 2) == 0:
-        b = multiply_matrix(matrix, matrix)
-        return power_matrix(b, n / 2)
-    else:
-        c = multiply_matrix(matrix, matrix)
-        a = power_matrix(c, (n - 1) / 2)
-        return power_matrix(a, matrix)
 
 def power_matrix(matrix, n):
-    matrixP = np.zeros((2, 2))
     if n == 1:
         return matrix
     else:
-        matrixP = power_matrix(matrix, floor(n / 2))
+        resMatrix = np.zeros((2, 2))
+        resMatrix = power_matrix(matrix, floor(n / 2))
+        multipliedMatrix = multiply_matrix(resMatrix, resMatrix)
         if n % 2 == 0:
-            return multiply_matrix(matrixP, matrixP)
+            return multipliedMatrix
         else:
-            return multiply_matrix(matrix, multiply_matrix(matrixP, matrixP))
+            return multiply_matrix(matrix, multipliedMatrix)
 
 print("Ingrese los valores de la matriz: ")
 matriz = create_matrix()
