@@ -1,10 +1,13 @@
 from math import floor
 
 def multiply(x, y):
-    if y == 1:
+    if x == 0:
         return 0
-    z = multiply(x, floor(y / 2))
-    if y % 2 == 0:
-        return 2 * z
+    if x % 2 == 0:
+        return 2 * multiply(floor(x / 2), y)
     else:
-        return x + 2 * z
+        return y + 2 * multiply(floor((x - 1) / 2), y)
+
+x = int(input("x = "))
+y = int(input("y = "))
+print(f"{x} * {y} = {multiply(x, y)}")
