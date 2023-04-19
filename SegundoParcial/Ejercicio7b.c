@@ -7,7 +7,7 @@ int main(void)
     // Semilla para números aleatorios
     srand(time(NULL));
 
-    // Variables de entrada
+    // Variables
     int size;
     int randomnessRange;
     int* test;
