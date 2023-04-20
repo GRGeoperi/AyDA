@@ -40,5 +40,8 @@ int main(void)
     MergeSortA(test, 0, size-1);
     DisplayArray(test, size);
 
+    // Liberación de memoria
+    free(test);
+
     return 0;
 }
