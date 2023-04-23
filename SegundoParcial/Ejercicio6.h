@@ -31,10 +31,10 @@ void index_exist(int resultado)
 {
     if (resultado == -1)
     {
-        printf("No existe el índice en el arreglo");
+        printf("No existe el indice en el arreglo");
     }
     else
     {
-        printf("El índice i, tal que A[i] = i es: %d", resultado);
+        printf("El indice i, tal que A[i] = i es: %d", resultado);
     }
 }
