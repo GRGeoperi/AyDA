@@ -23,7 +23,7 @@ int main(void)
     resArrayA = index_search(A, 0, 7);
     index_exist(resArrayA);
 
-    printf("\nCantidad de valores de los arreglos: ");
+    printf("\nCantidad de valores del arreglo: ");
     scanf("%d", &size);
     printf("Rango de llenado: ");
     scanf("%d", &randomnessRange);
@@ -32,6 +32,7 @@ int main(void)
 
     randomArray = CreateDynamicArray(size, randomnessRange);
     MergeSortA(randomArray, 0, size - 1);
+    printf("Su arreglo ordenado generado es: ");
     DisplayArray(randomArray, size);
 
     resRandomArray = index_search(randomArray, 0, size - 1);
