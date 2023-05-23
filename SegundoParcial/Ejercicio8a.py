@@ -57,13 +57,13 @@ def bruteForce_dictionary(N, Dictionary, Interval):
                 ...
                 9C9 = [ABCDEFGHI->2+5+3+...+1] = 38
             '''
-            suma_duracion = sum([duracion for _, duracion in combination]) # O(n)
+            sumTimes = sum([duracion for _, duracion in combination]) # O(n)
             # Verificar si la combinación es válida y maximiza el número de pendientes
             ''' Esa combinacion elegida será válida únicamente cuando el Intervalo de tiempo
                 recibido sea mayor o igual a la suma de las duraciones de aquella
                 combinacion actual y además tal combinación maximice los pendientes hechos.
             '''
-            if Interval >= suma_duracion and len(combination) > maxDuties:
+            if Interval >= sumTimes and len(combination) > maxDuties:
                 maxDuties = len(combination) # O(1)
                 bestCombination = combination # O(1)
     # Devolver la mejor combinación encontrada
